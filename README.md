@@ -23,3 +23,12 @@ Wtedy przyjmujemy przybliżenie kwadratowe funkcji   w otoczeniu   do rozwiązan
  Kenneth Levenberg zauważył, że opisane metody (największego spadku i Gaussa-Newtona) nawzajem się uzupełniają i zaproponował następującą modyfikację kroku metody:
  
 Donald Marquardt zauważył, że nawet w sytuacji gdzie hesjan jest niewykorzystywany można wykorzystać informację zawartą w drugiej pochodnej minimalizowanej funkcji, poprzez skalowanie każdego komponentu wektora gradientu w zależności od krzywizny w danym kierunku (co pomaga w źle uwarunkowanych zadaniach minimalizacji typu error valley). Po uwzględnieniu poprawki Marquardta otrzymujemy następującą postać kroku metody:
+
+# Przykład:
+
+julia> function sincos(x) = sin(x[1]) + cos(x[2])
+julia> HyperCube(sincos,[10.0,10.0],0.0001,100)
+norma mniejsz/równa  E
+ilosc krokow: 20
+wartosc x y dla minimum: [-6.83358e-7, -6.83358e-7]
+minimum: 9.339560643078874e-13
